@@ -1,10 +1,11 @@
 import './App.css'
+import Load from './components/Load'
 
 function App() {
 
   return (
     <>
-      <h1>Jesus did it again</h1>
+      <Load />
     </>
   )
 }
