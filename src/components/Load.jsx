@@ -24,6 +24,7 @@ function Load() {
     }, [])
     return (
         <div className="container d-flex flex-wrap gap-1">
+            {errorMsg && <p>{ errorMsg }</p>}
             {
                 cards && cards.length > 0 ? (
                     cards.map((item) => (
