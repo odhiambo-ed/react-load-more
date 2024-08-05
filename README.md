@@ -10,7 +10,7 @@
 
 ## Live Demo Link
 
-[Project Link](https://github.com/odhiambo-ed/react-load-more)
+[Project Live Link](https://react-load-more-hmr7ciqqw-white3ds-projects.vercel.app/)
 
 ## Built With
 
