@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 function Load() {
     const [cards, setCards] = useState([])
     const [errorMsg, setErrorMsg] = useState("")
+    const [visible, setVisible] = useState(6)
 
     async function fetchCards() {
         try {
@@ -22,12 +23,17 @@ function Load() {
     useEffect(() => {
         fetchCards()
     }, [])
+
+    const handleVisible = () => {
+        setVisible(cards && cards.length >= 6 ? visible + 6 : 6)
+    }
+
     return (
-      <div className="container">
+      <div className="container py-5 vh-100">
         <div className="d-flex flex-wrap gap-1 justify-content-center">
           {errorMsg && <p>{errorMsg}</p>}
           {cards && cards.length > 0 ? (
-            cards.slice(0, 6).map((item) => (
+            cards.slice(0, visible).map((item) => (
               <div key={item.id} className="card" style={{ width: "12rem" }}>
                 <img
                   src={item.images}
@@ -44,7 +50,7 @@ function Load() {
           )}
             </div>
             <div className="row justify-content-center mt-5">
-                <div className="btn btn-primary w-75">Load More ..</div>
+                <div onClick={handleVisible} className="btn btn-primary w-75">Load More ..</div>
             </div>
       </div>
     );
