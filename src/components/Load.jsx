@@ -42,7 +42,10 @@ function Load() {
           ) : (
             <div>No data fetched</div>
           )}
-        </div>
+            </div>
+            <div className="row justify-content-center mt-5">
+                <div className="btn btn-primary w-75">Load More ..</div>
+            </div>
       </div>
     );
 }
